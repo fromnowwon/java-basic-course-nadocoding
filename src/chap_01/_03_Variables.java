@@ -1,6 +1,6 @@
 package chap_01;
 
-public class _03_variables {
+public class _03_Variables {
     public static void main(String[] args) {
         String name = "나도코딩";
         int hour = 15;
