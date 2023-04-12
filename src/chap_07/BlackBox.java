@@ -88,7 +88,7 @@ public class BlackBox {
         if (resolution == null || resolution.isEmpty()) {
             return "판매자에게 문의하세요.";
         }
-        return modelName;
+        return resolution;
     }
 
     void setResolution(String resolution) {
