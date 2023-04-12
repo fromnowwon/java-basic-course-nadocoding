@@ -6,11 +6,32 @@ public class BlackBox {
     String resolution; // 해상도
     int price; // 가격
     String color; // 색상
+    int serialNumber; // 시리얼 넘버
+
+    static int counter = 0; // 시리얼 번호 생성 역할
 
     // 클래스 변수
     // static을 붙이면 클래스 변수가 된다.
     // 모든 객체에 똑같이 적용된다.
     static boolean canAutoReport = false; // 자동 신고 기능
+    
+    // 기본 생성자
+    BlackBox() {
+        System.out.println("기본 생성자 호출");
+        this.serialNumber = ++counter;
+        System.out.println("새로운 시리얼 넘버를 발급받았습니다: " + this.serialNumber);
+    }
+
+    // 생성자 overloading
+    BlackBox(String modelName, String resolution, int price, String color) {
+        this(); // 기본 생성자에 접근해서 수행
+
+        System.out.println("사용자 정의 생성자 호출");
+        this.modelName = modelName;
+        this.resolution = resolution;
+        this.price = price;
+        this.color = color;
+    }
 
     void autoReport() {
         if (canAutoReport) {
@@ -56,5 +77,9 @@ public class BlackBox {
         System.out.println("서비스 센터(1588-0000)로 연결합니다.");
         // modelName = "TEST";  => 에러
         canAutoReport = false; // static으로 선언한 클래스 변수는 클래스 메서드 안에서 사용 가능하다.
+    }
+
+    void appendModelName(String modelName) {
+        this.modelName += modelName;
     }
 }
