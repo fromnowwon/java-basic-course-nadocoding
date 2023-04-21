@@ -1,4 +1,4 @@
-package chap_08.Camera;
+package chap_08.camera;
 
 public abstract class Camera {
     public void takePicture() {
