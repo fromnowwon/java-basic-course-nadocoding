@@ -1,5 +1,8 @@
 package chap_07.camera;
 
+import chap_08.detector.AccidentDetector;
+import chap_08.reporter.VideoReporter;
+
 public class SpeedCam extends Camera { // 자식 클래스
     public SpeedCam() {
         super("과속단속 카메라"); // 부모 클래스의 생성자에 접근
@@ -25,4 +28,11 @@ public class SpeedCam extends Camera { // 자식 클래스
     public void showNameFeature() {
         System.out.println(this.name + "의 주요 기능: 속도 측정, 번호 인식");
     }
+
+    public void setDetector(AccidentDetector accidentDetector) {
+    }
+
+    public void setReporter(VideoReporter videoReporter) {
+    }
+
 }
