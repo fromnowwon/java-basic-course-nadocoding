@@ -1,9 +1,8 @@
 package chap_09;
 
-import chap_09.coffee.Coffee;
-import chap_09.coffee.CoffeeByName;
-import chap_09.coffee.CoffeeByNickname;
-import chap_09.coffee.CoffeeByNumber;
+import chap_09.coffee.*;
+import chap_09.user.User;
+import chap_09.user.VIPUser;
 
 public class _02_GenericClass {
     public static void main(String[] args) {
@@ -29,5 +28,14 @@ public class _02_GenericClass {
         c5.ready();
         Coffee<String> c6 = new Coffee<>("조세호");
         c6.ready();
+
+
+        System.out.println("----------------------");
+
+        CoffeeByUser<User> c7 = new CoffeeByUser<>(new User("강호동"));
+        c7.ready();
+
+        CoffeeByUser<User> c8 = new CoffeeByUser<>(new VIPUser("서장훈"));
+        c8.ready();
     }
 }
