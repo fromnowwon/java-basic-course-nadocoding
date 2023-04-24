@@ -1,5 +1,6 @@
 package chap_09;
 
+import chap_09.coffee.Coffee;
 import chap_09.coffee.CoffeeByName;
 import chap_09.coffee.CoffeeByNickname;
 import chap_09.coffee.CoffeeByNumber;
@@ -23,6 +24,10 @@ public class _02_GenericClass {
 
         System.out.println("----------------------");
 
-        
+        // 제너릭 클래스 사용
+        Coffee<Integer> c5 = new Coffee<>(35);
+        c5.ready();
+        Coffee<String> c6 = new Coffee<>("조세호");
+        c6.ready();
     }
 }
