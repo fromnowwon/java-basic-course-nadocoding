@@ -3,6 +3,7 @@ package chap_10;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
@@ -87,6 +88,34 @@ public class _05_Stream {
                 .filter(x -> x.length() <= 3)
                 .allMatch(x -> x.contains("c"));
         System.out.println(allMatch);
+        System.out.println("---------------");
+
+        // 4글자 이하의 언어 중에 c라는 글자를 포함하는 글자 뒤에 "어려워요" 글자 함께 출력
+        // map
+        langList.stream()
+                .filter(x -> x.length() <= 4)
+                .filter(x -> x.contains("c"))
+                .map(x -> x + " (어려워요)")
+                .forEach(System.out::println);
+        System.out.println("---------------");
+
+        // 4글자 이하의 언어 중에 c라는 글자를 포함하는 글자를 대문자로 출력
+        langList.stream()
+                .filter(x -> x.length() <= 4)
+                .filter(x -> x.contains("c"))
+                .map(String::toUpperCase)
+                .forEach(System.out::println);
+        System.out.println("---------------");
+
+        // c라는 글자를 포함하는 언어를 대문자로 변경하여 리스트로 저장
+        List<String> langListStartsWithC = langList.stream()
+                .filter(x -> x.length() <= 4)
+                .filter(x -> x.contains("c"))
+                .map(String::toUpperCase)
+                .collect(Collectors.toList());
+
+        System.out.println(langListStartsWithC);
+        langListStartsWithC.stream().forEach(System.out::println);
         System.out.println("---------------");
     }
 }
