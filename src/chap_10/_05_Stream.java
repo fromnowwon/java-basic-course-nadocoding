@@ -56,5 +56,37 @@ public class _05_Stream {
         Arrays.stream(scores).filter(x -> x >= 90).sorted().forEach(System.out::println);
         System.out.println("---------------");
 
+        // "python", "java", "javascript", "c", "c++", "c#"
+        // c로 시작하는 프로그래밍 언어
+        Arrays.stream(langs).filter(x -> x.startsWith("c")).forEach(System.out::println);
+        System.out.println("---------------");
+        // java라는 글자를 포함하는 언어
+        Arrays.stream(langs).filter(x -> x.contains("java")).forEach(System.out::println);
+        System.out.println("---------------");
+
+        // 글자 개수가 4 이하인 언어
+        langList.stream().filter(x -> x.length() <= 4).sorted().forEach(System.out::println);
+        System.out.println("---------------");
+
+        // 글자 개수가 4 이하인 언어 중에서 c 글자를 포함하는 언어
+        langList.stream()
+                .filter(x -> x.length() <= 4)
+                .filter(x -> x.contains("c"))
+                .forEach(System.out::println);
+        System.out.println("---------------");
+
+        // 글자 개수가 4 이하인 언어 중에서 c 글자를 포함하는지 여부
+        boolean anyMatch = langList.stream()
+                .filter(x -> x.length() <= 4)
+                .anyMatch(x -> x.contains("c"));
+        System.out.println(anyMatch);
+        System.out.println("---------------");
+
+        // 4글자 이하의 언어들은 모두 c라는 글자를 포함하는지 여부
+        boolean allMatch = langList.stream()
+                .filter(x -> x.length() <= 3)
+                .allMatch(x -> x.contains("c"));
+        System.out.println(allMatch);
+        System.out.println("---------------");
     }
 }
