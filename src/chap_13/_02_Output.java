@@ -15,5 +15,13 @@ public class _02_Output {
         System.out.printf("%,15d%n", 1000000000);
         System.out.printf("%-6d%n", 1234);
 
+        System.out.println("------- 실수 -------");
+        System.out.printf("%f%n", Math.PI);
+        System.out.printf("%.2f%n", Math.PI);
+        System.out.printf("%6.2f%n", Math.PI);
+        System.out.printf("%-6.2f%n", Math.PI);
+        System.out.printf("%06.2f%n", Math.PI);
+        System.out.printf("%+6.2f%n", Math.PI);
+
     }
 }
