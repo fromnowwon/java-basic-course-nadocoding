@@ -23,5 +23,25 @@ public class _02_Output {
         System.out.printf("%06.2f%n", Math.PI);
         System.out.printf("%+6.2f%n", Math.PI);
 
+        System.out.println("------- 문자열 -------");
+        System.out.printf("%s%n", "Java");
+        System.out.printf("%6s%n", "Java");
+        System.out.printf("%-6s%n", "Java");
+        System.out.printf("%6.2s%n", "Java");
+        System.out.printf("%-6.2s%n", "Java");
+
+        System.out.println("------- 응용1 -------");
+        System.out.println("이름 영어 수학 평균");
+        System.out.println("강백호 " + 90 + " " + 80 + " " + 85.0);
+        System.out.println("서태웅 " + 100 + " " + 100 + " " + 100.0);
+        System.out.println("채치수 " + 95 + " " + 100 + " " + 97.5);
+
+        System.out.println("------- 응용2 -------");
+        System.out.println("이름      영어   수학   평균");
+        System.out.printf("%-6s %4d %4d %6.1f%n", "강백호", 90, 80, 85.0);
+        System.out.printf("%-6s %4d %4d %6.1f%n", "서태웅", 100, 100, 100.0);
+        System.out.printf("%-6s %4d %4d %6.1f%n", "채치수", 95, 100, 97.5);
+
+        System.out.println("------- 참고 -------");
     }
 }
