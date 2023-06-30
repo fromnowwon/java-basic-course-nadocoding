@@ -21,5 +21,16 @@ public class _07_DeleteFile {
                 System.out.println("폴더 삭제 실패: " + folder.getAbsolutePath());
             }
         }
+
+
+    }
+
+    public static boolean deleteFolder(File folder) {
+        if (folder.isDirectory()) {
+            for (File file: folder.listFiles()) {
+                deleteFolder(file);
+            }
+        }
+        return folder.delete();
     }
 }
