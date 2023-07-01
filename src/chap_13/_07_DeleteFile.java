@@ -31,6 +31,7 @@ public class _07_DeleteFile {
                 deleteFolder(file);
             }
         }
+        System.out.println("삭제 대상: " + folder.getAbsolutePath());
         return folder.delete();
     }
 }
