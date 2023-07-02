@@ -22,8 +22,12 @@ public class _07_DeleteFile {
             }
         }
 
-
     }
+
+    // deleteFolder(A)
+        // deleteFolder(B)
+            // deleteFolder(C)
+            // C.delete() 삭제
 
     public static boolean deleteFolder(File folder) {
         if (folder.isDirectory()) {
